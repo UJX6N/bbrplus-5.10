@@ -15,7 +15,7 @@ diff -ruaN a/include/net/inet_connection_sock.h b/include/net/inet_connection_so
 diff -ruaN a/include/net/tcp.h b/include/net/tcp.h
 --- a/include/net/tcp.h	2021-11-03 02:48:25.000000000 +0800
 +++ b/include/net/tcp.h	2021-11-05 06:22:15.694756713 +0800
-@@ -571,6 +571,8 @@
+@@ -560,6 +560,8 @@
  #endif
  /* tcp_output.c */
  
@@ -24,7 +24,7 @@ diff -ruaN a/include/net/tcp.h b/include/net/tcp.h
  void __tcp_push_pending_frames(struct sock *sk, unsigned int cur_mss,
  			       int nonagle);
  int __tcp_retransmit_skb(struct sock *sk, struct sk_buff *skb, int segs);
-@@ -1083,6 +1085,8 @@
+@@ -1072,6 +1074,8 @@
  	void (*pkts_acked)(struct sock *sk, const struct ack_sample *sample);
  	/* override sysctl_tcp_min_tso_segs */
  	u32 (*min_tso_segs)(struct sock *sk);
