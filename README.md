@@ -14,10 +14,17 @@ https://github.com/cx9208/bbrplus
 ## some improvements as Nov-2021
 
 ###  i)   merged official v4.14 tcp_bbr patches between 2018-2021 into bbrplus  
-###  ii)  keep official v5.10 tcp_bbr module in the kernel, now can do either  
-<br/>
-net.ipv4.tcp_congestion_control = bbrplus    or    net.ipv4.tcp_congestion_control = bbr   
-<br/>
+###  ii)  keep official v5.17 tcp_bbr module, so may use either  
+```sh
+net.ipv4.tcp_congestion_control = bbrplus
+net.core.default_qdisc = fq
+```
+or
+```sh
+net.ipv4.tcp_congestion_control = bbr
+net.core.default_qdisc = fq
+```
+in the `/etc/sysctl.conf` file. &nbsp;&nbsp; ( `fq` is the only recommended packet scheduler, do not use `fq_codel` `fq_pie` `cake` etc ) 
 <br/>
 <br/>
 <br/>
